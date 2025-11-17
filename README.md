@@ -1,0 +1,9 @@
+## Intro
+* [게임 프로그래머 입문 올인원-C++ & 자료구조/알고리즘 & STL & 게임 수학 & Windows API & 게임 서버](https://www.inflearn.com/course/%EA%B2%8C%EC%9E%84-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8-%EC%9E%85%EB%AC%B8-%EC%98%AC%EC%9D%B8%EC%9B%90-rookiss)
+* IDE: Visual Studio 2022
+* Template: Windows Desktop Application
+## Main
+* Windows API 입문
+  * 기본 템플릿 분석 (Starting With Basic Template)
+  * 프레임워크 제작-TimeManager, InputManager (Set-up Base Game Framework)
+

@@ -1,17 +1,15 @@
 // GameCodingAdventure.cpp : Defines the entry point for the application.
 //
-
+#include "pch.h"
 #include "framework.h"
 #include "GameCodingAdventure.h"
+#include "Game.h"
 
 #define MAX_LOADSTRING 100
 
-// TODO: TEMP 임시
-int mousePosX;
-int mousePosY;
-
 // Global Variables:
-HINSTANCE hInst;                                // current instance
+HINSTANCE hInst;
+HWND g_hWnd;
 
 // Forward declarations of functions included in this code module:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
@@ -33,14 +31,33 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         return FALSE;
     }
 
-    MSG msg;
+    Game game;
+    game.Init(g_hWnd);
+
+    MSG msg = {};
+    uint64 prevTick = ::GetTickCount64();
 
     // 3) 윈도우 창 메인 루프
     // Main message loop:
-    while (::GetMessage(&msg, nullptr, 0, 0))
+    while (msg.message != WM_QUIT)
     {
-        ::TranslateMessage(&msg);
-        ::DispatchMessage(&msg);
+        if (::PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
+        {
+            ::TranslateMessage(&msg);
+            ::DispatchMessage(&msg);
+        }
+        else
+        {
+            // TODO: 할일-게임로직
+            uint64 now = ::GetTickCount64();
+            //if (now - prevTick >= 30)
+            {
+                game.Update();
+                game.Render();
+
+                prevTick = now;
+            }
+        } 
     }
 
     return (int) msg.wParam;
@@ -94,6 +111,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    HWND hWnd = CreateWindowW(L"HDRP", L"Client", WS_OVERLAPPEDWINDOW,
       CW_USEDEFAULT, 0, windowRect.right - windowRect.left, windowRect.bottom - windowRect.top, 0, nullptr, nullptr, hInstance, nullptr);
 
+   g_hWnd = hWnd;
    if (!hWnd)
    {
       return FALSE;

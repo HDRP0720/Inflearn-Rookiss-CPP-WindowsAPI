@@ -1,0 +1,50 @@
+#include "pch.h"
+#include "Game.h"
+#include "TimeManager.h"
+#include "InputManager.h"
+
+Game::Game()
+{
+}
+
+Game::~Game()
+{
+}
+
+void Game::Init(HWND hwnd)
+{
+	_hwnd = hwnd;
+	_hdc = ::GetDC(hwnd);
+
+	GET_SINGLETON(TimeManager)->Init();
+	GET_SINGLETON(InputManager)->Init(hwnd);
+
+}
+
+void Game::Update()
+{
+	GET_SINGLETON(TimeManager)->Update();
+	GET_SINGLETON(InputManager)->Update();
+}
+
+void Game::Render()
+{
+	uint32 fps = GET_SINGLETON(TimeManager)->GetFPS();
+	float deltaTime = GET_SINGLETON(TimeManager)->GetDeltaTime();
+
+	// Mouse Position 확인
+	{
+		POINT mousePos = GET_SINGLETON(InputManager)->GetMousePos();
+		wstring str = std::format(L"Mouse({0}, {1})", mousePos.x, mousePos.y);
+		::TextOut(_hdc, 20, 10, str.c_str(), static_cast<int32>(str.size()));
+	}
+
+	// Frame 관리
+	{
+		wstring str = std::format(L"FPS({0}), DT({1} ms)", fps, static_cast<int32>(deltaTime));
+		::TextOut(_hdc, 650, 10, str.c_str(), static_cast<int32>(str.size()));
+	}
+
+	::Rectangle(_hdc, 200, 200, 400, 400);
+
+}

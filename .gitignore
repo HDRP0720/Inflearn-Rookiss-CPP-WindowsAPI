@@ -1,0 +1,78 @@
+## Visual Studio 관련 공통 ##
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## 빌드 결과물 ##
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# 빌드 출력 파일
+*.obj
+*.exe
+*.dll
+*.pdb
+*.ilk
+*.idb
+*.iobj
+*.ipdb
+*.lib
+*.exp
+*.appx
+
+## 캐시 및 중간 파일 ##
+*.pch
+*.cache
+*.tlog
+*.lastbuildstate
+*.vspscc
+*.vssscc
+*.psess
+*.vsp
+*.vsps
+*.pdb
+*.ipch
+*.db
+*.opendb
+*.VC.db
+*.VC.opendb
+
+## C++ 관련 중간파일 ##
+*.manifest
+*.res
+*.rsp
+
+## Test 관련 ##
+TestResult*/
+build/
+*.coverage
+*.coveragexml
+
+## CMake 관련 (Win32에서 CMake 사용 시) ##
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Testing/
+Makefile
+
+## NuGet 패키지 ##
+packages/
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+
+## 기타 ##
+*.log
+*.tmp
+*.temp
+*.cachefile
+*.db-journal
+
+## Windows Desktop App 전용 (리소스/RC 중간파일) ##
+*.aps      # MFC/Win32 리소스 템프 파일
+*.res      # 컴파일된 리소스
+*.ipch     # IntelliSense 캐시
+*.tlog     # incremental link 관련 파일

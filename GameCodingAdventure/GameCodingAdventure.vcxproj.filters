@@ -21,6 +21,15 @@
     <Filter Include="Source Files\99. Headers\Default">
       <UniqueIdentifier>{987822f4-e27f-4e6b-8a4c-b91c017a23b8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\03. Objects">
+      <UniqueIdentifier>{b8323fd5-752a-481b-a90a-1fed05533dd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\02. Scene">
+      <UniqueIdentifier>{9d6a0ee8-286f-49bc-b671-508dd7a7d9fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\02. Scene\Game">
+      <UniqueIdentifier>{bc9c9035-27d4-47c0-9bae-f57afa3569ea}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameCodingAdventure.h">
@@ -56,6 +65,21 @@
     <ClInclude Include="TimeManager.h">
       <Filter>Source Files\01. Manager</Filter>
     </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Source Files\99. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Source Files\02. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Source Files\01. Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="DevScene.h">
+      <Filter>Source Files\02. Scene\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>Source Files\02. Scene\Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameCodingAdventure.rc">
@@ -85,6 +109,21 @@
     </ClCompile>
     <ClCompile Include="TimeManager.cpp">
       <Filter>Source Files\01. Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Source Files\99. Headers</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Source Files\02. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Source Files\01. Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="DevScene.cpp">
+      <Filter>Source Files\02. Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>Source Files\02. Scene\Game</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

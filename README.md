@@ -3,7 +3,9 @@
 * IDE: Visual Studio 2022
 * Template: Windows Desktop Application
 ## Main
-* Windows API 입문
-  * 기본 템플릿 분석 (Starting With Basic Template)
-  * 프레임워크 제작-TimeManager, InputManager (Set-up Base Game Framework)
+* Windows API 입문(섹션11)
+  * 88-기본 템플릿 분석 (Starting With Basic Template)
+  * 89-프레임워크 제작-TimeManager, InputManager (Set-up Base Game Framework)
+  * 90-프레임워크 제작-Scene, SceneManger (Set-up Base Game Framework)
+  * 91-더블 버퍼링 (Double Buffering)
 

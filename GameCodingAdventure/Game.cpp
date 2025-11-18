@@ -2,13 +2,19 @@
 #include "Game.h"
 #include "TimeManager.h"
 #include "InputManager.h"
+#include "SceneManager.h"
 
 Game::Game()
 {
+
 }
 
 Game::~Game()
 {
+	GET_SINGLETON(SceneManager)->Clear();
+
+	// TODO: 할일-주의 마지막 라인에 존재해야함
+	_CrtDumpMemoryLeaks();
 }
 
 void Game::Init(HWND hwnd)
@@ -18,6 +24,9 @@ void Game::Init(HWND hwnd)
 
 	GET_SINGLETON(TimeManager)->Init();
 	GET_SINGLETON(InputManager)->Init(hwnd);
+	GET_SINGLETON(SceneManager)->Init();
+
+	GET_SINGLETON(SceneManager)->ChangeScene(SceneType::DevScene);
 
 }
 
@@ -25,6 +34,7 @@ void Game::Update()
 {
 	GET_SINGLETON(TimeManager)->Update();
 	GET_SINGLETON(InputManager)->Update();
+	GET_SINGLETON(SceneManager)->Update();
 }
 
 void Game::Render()
@@ -45,6 +55,5 @@ void Game::Render()
 		::TextOut(_hdc, 650, 10, str.c_str(), static_cast<int32>(str.size()));
 	}
 
-	::Rectangle(_hdc, 200, 200, 400, 400);
-
+	GET_SINGLETON(SceneManager)->Render(_hdc);
 }

@@ -4,6 +4,8 @@
 #include "TimeManager.h"
 #include "ObjectManager.h"
 #include "Missile.h"
+#include "ResourceManager.h"
+#include "LineMesh.h"
 
 Player::Player() : Object(ObjectType::Player)
 {
@@ -52,5 +54,10 @@ void Player::Update()
 
 void Player::Render(HDC hdc)
 {
-	Utils::DrawCircle(hdc, _pos, 50);
+	//Utils::DrawCircle(hdc, _pos, 50);
+	const LineMesh* mesh = GET_SINGLETON(ResourceManager)->GetLineMesh(L"Player");
+	if (mesh)
+	{
+		mesh->Render(hdc, _pos);
+	}
 }

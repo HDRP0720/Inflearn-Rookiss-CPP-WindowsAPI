@@ -11,4 +11,5 @@
   * 92-오브젝트 설계(1) (Object Designing(1))
   * 93-오브젝트 설계(2) (Object Designing(2))
   * 94-리소스 (Resource)
+  * 95-리소스 매니저 (ResourceManager)
 

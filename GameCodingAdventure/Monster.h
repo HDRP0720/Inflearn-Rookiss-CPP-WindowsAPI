@@ -2,6 +2,7 @@
 #include "Object.h"
 class Monster : public Object
 {
+public:
 	Monster();
 	virtual ~Monster() override;
 

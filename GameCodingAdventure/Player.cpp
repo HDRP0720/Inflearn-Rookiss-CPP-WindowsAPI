@@ -41,7 +41,7 @@ void Player::Update()
 	if (GET_SINGLETON(InputManager)->GetButton(KeyType::S))
 		_pos.y += _stat.speed * deltaTime;
 
-	if (GET_SINGLETON(InputManager)->GetButton(KeyType::SpaceBar))
+	if (GET_SINGLETON(InputManager)->GetButtonDown(KeyType::SpaceBar))
 	{
 		// TODO: 할일 - 미사일 추가 및 발사
 		Missile* missile = GET_SINGLETON(ObjectManager)->CreateObject<Missile>();

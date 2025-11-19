@@ -33,7 +33,8 @@ void Game::Init(HWND hwnd)
 	GET_SINGLETON(InputManager)->Init(hwnd);
 	GET_SINGLETON(SceneManager)->Init();
 
-	GET_SINGLETON(SceneManager)->ChangeScene(SceneType::DevScene);
+	// GET_SINGLETON(SceneManager)->ChangeScene(SceneType::DevScene);
+	GET_SINGLETON(SceneManager)->ChangeScene(SceneType::GameScene);
 }
 
 void Game::Update()

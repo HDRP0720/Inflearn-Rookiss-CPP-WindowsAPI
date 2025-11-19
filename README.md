@@ -8,4 +8,6 @@
   * 89-프레임워크 제작-TimeManager, InputManager (Set-up Base Game Framework)
   * 90-프레임워크 제작-Scene, SceneManger (Set-up Base Game Framework)
   * 91-더블 버퍼링 (Double Buffering)
+  * 92-오브젝트 설계(1) (Object Designing(1))
+  * 93-오브젝트 설계(2) (Object Designing(2))
 

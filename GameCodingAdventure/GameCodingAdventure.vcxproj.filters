@@ -30,6 +30,9 @@
     <Filter Include="Source Files\02. Scene\Game">
       <UniqueIdentifier>{bc9c9035-27d4-47c0-9bae-f57afa3569ea}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\03. Objects\Game">
+      <UniqueIdentifier>{a29cad91-8cf7-4ab0-a037-a06f02f03dcf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameCodingAdventure.h">
@@ -80,6 +83,21 @@
     <ClInclude Include="GameScene.h">
       <Filter>Source Files\02. Scene\Game</Filter>
     </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Source Files\03. Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Source Files\03. Objects\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Missile.h">
+      <Filter>Source Files\03. Objects\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>Source Files\03. Objects\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>Source Files\01. Manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameCodingAdventure.rc">
@@ -124,6 +142,21 @@
     </ClCompile>
     <ClCompile Include="GameScene.cpp">
       <Filter>Source Files\02. Scene\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Source Files\03. Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Missile.cpp">
+      <Filter>Source Files\03. Objects\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>Source Files\03. Objects\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\03. Objects\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>Source Files\01. Manager</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

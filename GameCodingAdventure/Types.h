@@ -15,3 +15,10 @@ struct Pos
 	float x = 0.0f;
 	float y = 0.0f;
 };
+
+struct Stat
+{
+	int32 hp = 0;
+	int32 maxHp = 0;
+	float speed = 0;
+};

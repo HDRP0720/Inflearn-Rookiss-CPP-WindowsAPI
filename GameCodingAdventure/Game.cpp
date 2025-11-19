@@ -34,7 +34,8 @@ void Game::Init(HWND hwnd)
 	GET_SINGLETON(SceneManager)->Init();
 
 	// GET_SINGLETON(SceneManager)->ChangeScene(SceneType::DevScene);
-	GET_SINGLETON(SceneManager)->ChangeScene(SceneType::GameScene);
+	// GET_SINGLETON(SceneManager)->ChangeScene(SceneType::GameScene);
+	GET_SINGLETON(SceneManager)->ChangeScene(SceneType::EditScene);
 }
 
 void Game::Update()
@@ -58,7 +59,7 @@ void Game::Render()
 
 	// Frame °ü¸®
 	{
-		wstring str = std::format(L"FPS({0}), DT({1} ms)", fps, static_cast<int32>(deltaTime));
+		wstring str = std::format(L"FPS({0}), DT({1} ms)", fps, static_cast<int32>(deltaTime*1000));
 		::TextOut(_hdcBack, 650, 10, str.c_str(), static_cast<int32>(str.size()));
 	}
 

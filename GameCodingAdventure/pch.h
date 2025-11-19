@@ -5,6 +5,7 @@
 #include "Defines.h"
 #include "Utils.h"
 
+#include <iostream>
 #include <Windows.h>
 #include <vector>
 #include <list>

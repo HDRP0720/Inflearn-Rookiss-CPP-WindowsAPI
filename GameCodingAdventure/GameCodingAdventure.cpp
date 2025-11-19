@@ -16,11 +16,28 @@ ATOM                MyRegisterClass(HINSTANCE hInstance);
 BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 
+// 콘솔 창으로 디버깅 로그 확인을 위해 추가
+void CreateConsole()
+{
+    AllocConsole();
+
+    FILE* fp;
+    freopen_s(&fp, "CONOUT$", "w", stdout);
+    freopen_s(&fp, "CONOUT$", "w", stderr);
+    freopen_s(&fp, "CONIN$", "r", stdin);
+
+    std::cout << "Console initialized!" << std::endl;
+}
+
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_opt_ HINSTANCE hPrevInstance,
                      _In_ LPWSTR    lpCmdLine,
                      _In_ int       nCmdShow)
 {
+#ifdef _DEBUG
+    CreateConsole();
+#endif
+
     // 1) 윈도우 창 정보 등록
     MyRegisterClass(hInstance);
 
@@ -35,7 +52,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     game.Init(g_hWnd);
 
     MSG msg = {};
-    uint64 prevTick = ::GetTickCount64();
+    uint64 prevTick = 0;
 
     // 3) 윈도우 창 메인 루프
     // Main message loop:
@@ -47,8 +64,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
             ::DispatchMessage(&msg);
         }
         else
-        {
-            // TODO: 할일-게임로직
+        {     
             uint64 now = ::GetTickCount64();
             //if (now - prevTick >= 30)
             {
@@ -109,7 +125,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    ::AdjustWindowRect(&windowRect, WS_OVERLAPPEDWINDOW, false);
 
    HWND hWnd = CreateWindowW(L"HDRP", L"Client", WS_OVERLAPPEDWINDOW,
-      CW_USEDEFAULT, 0, windowRect.right - windowRect.left, windowRect.bottom - windowRect.top, 0, nullptr, nullptr, hInstance, nullptr);
+      CW_USEDEFAULT, 0, windowRect.right - windowRect.left, windowRect.bottom - windowRect.top, nullptr, nullptr, hInstance, nullptr);
 
    g_hWnd = hWnd;
    if (!hWnd)

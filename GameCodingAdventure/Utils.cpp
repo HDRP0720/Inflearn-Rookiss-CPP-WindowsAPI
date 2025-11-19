@@ -33,7 +33,7 @@ void Utils::DrawLine(HDC hdc, Pos from, Pos to)
 	int fromX = static_cast<int32>(from.x);
 	int fromY = static_cast<int32>(from.y);
 	int toX = static_cast<int32>(to.x);
-	int toY = static_cast<int32>(to.x);
+	int toY = static_cast<int32>(to.y);
 
 	::MoveToEx(hdc, fromX, fromY, nullptr);
 	::LineTo(hdc, toX, toY);

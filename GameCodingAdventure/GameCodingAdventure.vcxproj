@@ -131,6 +131,7 @@
   <ItemGroup>
     <ClInclude Include="Defines.h" />
     <ClInclude Include="DevScene.h" />
+    <ClInclude Include="EditScene.h" />
     <ClInclude Include="Enums.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Game.h" />
@@ -153,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DevScene.cpp" />
+    <ClCompile Include="EditScene.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameCodingAdventure.cpp" />
     <ClCompile Include="GameScene.cpp" />

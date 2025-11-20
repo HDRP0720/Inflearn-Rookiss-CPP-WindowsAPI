@@ -22,10 +22,11 @@ void GameScene::Init()
 	}
 
 	// Monster Ãß°¡
-	for(int32 i = 0; i < 5; i++)
+	//for(int32 i = 0; i < 5; i++)
 	{
 		Monster* monster = GET_SINGLETON(ObjectManager)->CreateObject<Monster>();
-		monster->SetPos(Pos{ static_cast<float>((i+1)*100), 100 });
+		//monster->SetPos(Pos{ static_cast<float>((i + 1) * 100), 100 });
+		monster->SetPos(Pos{ 100, 100 });
 		GET_SINGLETON(ObjectManager)->Add(monster);
 	}
 

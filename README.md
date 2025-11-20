@@ -14,4 +14,5 @@
   * 95-리소스 매니저 (ResourceManager)
 * 게임 수학(섹션12)
   * 96-삼각함수 (trigonometric functions)
+  * 97-벡터 (Vector)
 

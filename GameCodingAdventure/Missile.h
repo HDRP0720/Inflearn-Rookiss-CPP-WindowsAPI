@@ -15,5 +15,8 @@ public:
 
 protected:
 	float _angle = 0.0f;
+
+	float _beginHommingTime = 0.0f;
+	Object* _target = nullptr;
 };
 

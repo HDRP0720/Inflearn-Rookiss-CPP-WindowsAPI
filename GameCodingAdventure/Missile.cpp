@@ -24,7 +24,8 @@ void Missile::Update()
 {
 	float deltaTime = GET_SINGLETON(TimeManager)->GetDeltaTime();
 
-	_pos.y -= _stat.speed * deltaTime;
+	_pos.x += _stat.speed * deltaTime * ::cos(_angle);
+	_pos.y -= _stat.speed * deltaTime * ::sin(_angle);
 
 	// TODO: 할일 - 충돌 처리 및 기타
 	const vector<Object*> objects = GET_SINGLETON(ObjectManager)->GetObjects();

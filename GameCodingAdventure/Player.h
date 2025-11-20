@@ -10,5 +10,11 @@ public:
 	virtual void Init() override;
 	virtual void Update() override;
 	virtual void Render(HDC hdc) override;
+
+	Pos GetFirePos();
+
+private:
+	float _barrelAngle = 0.0f;
+	float _barrelLength = 100.0f;
 };
 

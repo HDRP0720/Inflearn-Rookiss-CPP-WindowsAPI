@@ -16,3 +16,4 @@
   * 96-삼각함수 (trigonometric functions)
   * 97-벡터 (Vector)
   * 98-내적 (Dot Product)
+  * 99-외적 (Cross Product)

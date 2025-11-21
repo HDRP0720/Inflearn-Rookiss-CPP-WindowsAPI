@@ -19,31 +19,45 @@ void Monster::Init()
 
 void Monster::Update()
 {
-	Vector mousePos = GET_SINGLETON(InputManager)->GetMousePos();
-	Vector v1 = _end - _start;
-	Vector v2 = mousePos - _start;
 
-	float maxLength = v1.Length();
-
-	v1.Normalize();
-	float dotValue = v1.Dot(v2);
-	Pos pos = _start + v1 * dotValue;
-
-	if (dotValue < 0.0f || dotValue > maxLength)
-		return;
-
-	_pos = pos;
 }
 
 void Monster::Render(HDC hdc)
 {
-	Utils::DrawCircle(hdc, _pos, 50);
+	Vector mousePos = GET_SINGLETON(InputManager)->GetMousePos();
 
 	HPEN pen = ::CreatePen(PS_SOLID, 1, RGB(255, 0, 0));
 	HPEN oldPen = (HPEN)::SelectObject(hdc, pen);
 	{
-		Utils::DrawLine(hdc, _start, _end);
+		Utils::DrawLine(hdc, _pt1, _pt2);
+		Utils::DrawLine(hdc, _pt2, _pt3);
+		Utils::DrawLine(hdc, _pt3, _pt1);
 	}
 	::SelectObject(hdc, oldPen);
 	::DeleteObject(pen);
-}
+
+	Utils::DrawLine(hdc, _pt1, mousePos);
+
+	Vector v12 = _pt2 - _pt1;
+	Vector v1m = mousePos - _pt1;
+	Vector v13 = _pt3 - _pt1;
+
+	v12.Normalize();
+	v1m.Normalize();
+	v13.Normalize();
+
+	float c1 = v12.Cross(v1m);
+	float c2 = v1m.Cross(v13);
+
+	if (c1 >= 0.0f && c2 >= 0.0f)
+	{
+		// TODO: 범위 안에 들어간 경우
+	}
+	else
+	{
+		// TODO: 범위를 벗어난 경우
+	}
+
+	wstring str = format(L"c1({0}), c2({1})", c1, c2);
+	Utils::DrawTextW(hdc, { 20, 50 }, str);
+;}

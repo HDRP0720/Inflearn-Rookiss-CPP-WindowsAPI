@@ -87,6 +87,11 @@ struct Vector
 		return x * other.x + y * other.y;
 	}
 
+	float Cross(Vector other)
+	{
+		return x * other.y - y * other.x;
+	}
+
 	float x = 0.0f;
 	float y = 0.0f;
 };

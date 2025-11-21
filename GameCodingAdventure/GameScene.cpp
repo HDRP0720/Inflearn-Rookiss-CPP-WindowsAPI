@@ -26,7 +26,7 @@ void GameScene::Init()
 	{
 		Monster* monster = GET_SINGLETON(ObjectManager)->CreateObject<Monster>();
 		//monster->SetPos(Pos{ static_cast<float>((i + 1) * 100), 100 });
-		monster->SetPos(Pos{ 400, 400 });
+		//monster->SetPos(Pos{ 400, 400 });
 		GET_SINGLETON(ObjectManager)->Add(monster);
 	}
 

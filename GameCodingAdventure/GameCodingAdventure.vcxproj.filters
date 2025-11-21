@@ -39,6 +39,12 @@
     <Filter Include="Source Files\04. Resources\Game">
       <UniqueIdentifier>{f0d18b1f-219f-41c7-8702-40b5b23f4aa5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\01. Manager\Game">
+      <UniqueIdentifier>{6f106799-b666-4150-84cf-cd253ce615f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\02. Scene\Game\Fortress">
+      <UniqueIdentifier>{225b1adc-95e9-4494-bada-e8437c688d02}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameCodingAdventure.h">
@@ -86,19 +92,10 @@
     <ClInclude Include="DevScene.h">
       <Filter>Source Files\02. Scene\Game</Filter>
     </ClInclude>
-    <ClInclude Include="GameScene.h">
-      <Filter>Source Files\02. Scene\Game</Filter>
-    </ClInclude>
     <ClInclude Include="Object.h">
       <Filter>Source Files\03. Objects</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>Source Files\03. Objects\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Missile.h">
-      <Filter>Source Files\03. Objects\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Monster.h">
       <Filter>Source Files\03. Objects\Game</Filter>
     </ClInclude>
     <ClInclude Include="ObjectManager.h">
@@ -115,6 +112,21 @@
     </ClInclude>
     <ClInclude Include="ResourceManager.h">
       <Filter>Source Files\01. Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="UIManager.h">
+      <Filter>Source Files\01. Manager\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Values.h">
+      <Filter>Source Files\99. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuScene.h">
+      <Filter>Source Files\02. Scene\Game\Fortress</Filter>
+    </ClInclude>
+    <ClInclude Include="FortressScene.h">
+      <Filter>Source Files\02. Scene\Game\Fortress</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Source Files\03. Objects\Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -158,17 +170,8 @@
     <ClCompile Include="DevScene.cpp">
       <Filter>Source Files\02. Scene\Game</Filter>
     </ClCompile>
-    <ClCompile Include="GameScene.cpp">
-      <Filter>Source Files\02. Scene\Game</Filter>
-    </ClCompile>
     <ClCompile Include="Object.cpp">
       <Filter>Source Files\03. Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Missile.cpp">
-      <Filter>Source Files\03. Objects\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Monster.cpp">
-      <Filter>Source Files\03. Objects\Game</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Source Files\03. Objects\Game</Filter>
@@ -187,6 +190,18 @@
     </ClCompile>
     <ClCompile Include="ResourceManager.cpp">
       <Filter>Source Files\01. Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="UIManager.cpp">
+      <Filter>Source Files\01. Manager\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="FortressScene.cpp">
+      <Filter>Source Files\02. Scene\Game\Fortress</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuScene.cpp">
+      <Filter>Source Files\02. Scene\Game\Fortress</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Source Files\03. Objects\Game</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

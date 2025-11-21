@@ -9,10 +9,41 @@ ResourceManager::~ResourceManager()
 
 void ResourceManager::Init()
 {
-	LineMesh* mesh = new LineMesh();
-	mesh->Load(L"Player.txt");
+	// Player
+	{
+		//LineMesh* mesh = new LineMesh();
+		//mesh->Load(L"Player.txt");
+		//_lineMeshes[L"Player"] = mesh;
+	}
 
-	_lineMeshes[L"Player"] = mesh;
+	// UI
+	{
+		LineMesh* mesh = new LineMesh();
+		mesh->Load(L"UI.txt");
+		_lineMeshes[L"UI"] = mesh;
+	}
+
+	// Menu
+	{
+		LineMesh* mesh = new LineMesh();
+		mesh->Load(L"Menu.txt");
+		_lineMeshes[L"Menu"] = mesh;
+	}
+
+	// MissileTank
+	{
+		LineMesh* mesh = new LineMesh();
+		mesh->Load(L"MissileTank.txt");
+		_lineMeshes[L"MissileTank"] = mesh;
+	}
+
+	// CannonTank
+	{
+		LineMesh* mesh = new LineMesh();
+		mesh->Load(L"CannonTank.txt");
+		_lineMeshes[L"CannonTank"] = mesh;
+	}
+
 }
 
 void ResourceManager::Clear()

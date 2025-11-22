@@ -18,3 +18,5 @@
   * 98-내적 (Dot Product)
   * 99-외적 (Cross Product)
   * 100-역삼각함수 (Inverse Trigonometric Functions)
+  * 101-포트리스 모작(1) (Fortress Game Cloning(1))
+  * 102-포트리스 모작(2) (Fortress Game Cloning(2))

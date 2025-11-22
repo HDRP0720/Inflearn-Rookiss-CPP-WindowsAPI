@@ -12,19 +12,19 @@ void SceneManager::Init()
 
 void SceneManager::Update()
 {
-	if (_scene)
-		_scene->Update();
+	if (_currentScene)
+		_currentScene->Update();
 }
 
 void SceneManager::Render(HDC hdc)
 {
-	if (_scene)
-		_scene->Render(hdc);
+	if (_currentScene)
+		_currentScene->Render(hdc);
 }
 
 void SceneManager::Clear()
 {
-	SAFE_DELETE(_scene);
+	SAFE_DELETE(_currentScene);
 }
 
 void SceneManager::ChangeScene(SceneType sceneType)
@@ -53,9 +53,9 @@ void SceneManager::ChangeScene(SceneType sceneType)
 		break;
 	}
 
-	SAFE_DELETE(_scene);
+	SAFE_DELETE(_currentScene);
 
-	_scene = newScene;
+	_currentScene = newScene;
 	_sceneType = sceneType;
 
 	newScene->Init();

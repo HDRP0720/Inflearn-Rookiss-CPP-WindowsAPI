@@ -22,6 +22,8 @@ public:
 	int32 GetPlayerId() { return _playerId; }
 	PlayerType GetPlayerType() { return _playerType; }
 	bool GetPlayerTurn() { return _isPlayerTurn; }
+
+	void UpdateFireAngle();
 	
 public:
 	int32 _playerId = 0;

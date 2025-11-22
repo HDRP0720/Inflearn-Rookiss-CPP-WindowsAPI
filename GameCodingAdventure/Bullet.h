@@ -11,8 +11,13 @@ public:
 	virtual void Render(HDC hdc) override;
 
 	void SetVelocity(Vector velocity) { _velocity = velocity; }
+	Vector GetVelocity() { return _velocity; }
+
+	Object* GetOwner() { return _owner; }
+	void SetOwner(Object* owner) { _owner = owner; }
 
 public:
 	Vector _velocity = {};
+	Object* _owner = nullptr;
 };
 

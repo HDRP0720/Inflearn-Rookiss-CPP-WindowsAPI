@@ -85,6 +85,7 @@ void Player::Update()
 		float angle = GET_SINGLETON(UIManager)->GetBarrelAngle();
 
 		Bullet* bullet = GET_SINGLETON(ObjectManager)->CreateObject<Bullet>();
+		bullet->SetOwner(this);
 		bullet->SetPos(_pos);
 		bullet->SetVelocity(Vector{ speed * ::cos(angle * PI / 180.0f), -1 * speed * ::sin(angle * PI / 180.0f) });
 		GET_SINGLETON(ObjectManager)->Add(bullet);

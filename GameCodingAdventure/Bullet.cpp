@@ -3,6 +3,7 @@
 #include "TimeManager.h"
 #include "ObjectManager.h"
 #include "SceneManager.h"
+#include "UIManager.h"
 #include "FortressScene.h"
 
 Bullet::Bullet() : Object(ObjectType::Projectile)
@@ -24,8 +25,34 @@ void Bullet::Update()
 	float deltaTime = GET_SINGLETON(TimeManager)->GetDeltaTime();
 
 	// TODO: 且老 - Wind, Gravity
+	float windPercent = GET_SINGLETON(UIManager)->GetWindPercent();
+	_velocity.x += 20 * deltaTime * windPercent;
+	_velocity.y += 1000 * deltaTime;
 
 	_pos += _velocity * deltaTime;
+
+	const vector<Object*>& objects = GET_SINGLETON(ObjectManager)->GetObjects();
+	for (Object* obj : objects)
+	{
+		if (obj->GetObjectType() != ObjectType::Player) continue;
+
+		if (obj == _owner) continue;
+
+		Vector dir = _pos - obj->GetPos();
+		if (dir.Length() < _radius + obj->GetRadius())
+		{
+
+			// TODO: 且老 - damage 贸府 殿
+
+			FortressScene* scene = dynamic_cast<FortressScene*>(GET_SINGLETON(SceneManager)->GetCurrentScene());
+			if (scene)
+				scene->ChangePlayerTurn();	
+
+			GET_SINGLETON(ObjectManager)->Remove(this);
+			return;
+		}
+	}
+
 
 	if (_pos.y > GWinSizeY * 1.5 || _pos.y < -GWinSizeY * 1.5)
 	{
